@@ -28,13 +28,13 @@ app.use('/api/v1/', auth);
 app.use('/api/v1/', order);
 app.use('/api/v1/', user);
 
-if (process.env.NODE_ENV == 'PRODUCTION') {
-    app.use(express.static(path.join(__dirname, '../frontend/build')));
+// if (process.env.NODE_ENV == 'PRODUCTION') {
     
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
-    });
-}
+//     app.get('/', (req, res) => {
+//         app.use(express.static(path.resolve(__dirname, 'frontend','build')));
+//         res.sendFile(path.resolve(__dirname, 'frontend','build','index.html'));
+//     });
+// }
 
 // Middleware to handle errors
 app.use(errorMiddleware);
