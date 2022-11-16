@@ -5,8 +5,8 @@
     }],
     "routes":[
         {
-            "src":"/.*",
-            "dest":"backend/server.js"
+            "src":"/(.*)",
+            "dest":"/"
         }
     ]
 }
