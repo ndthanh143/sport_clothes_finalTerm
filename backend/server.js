@@ -1,3 +1,4 @@
+const express = require('express');
 const app = require('./app');
 const connectDatabase = require('./config/database');
 const path = require('path');
@@ -19,18 +20,10 @@ dotenv.config({ path: 'backend/config/config.env' });
 // Connecting to database
 connectDatabase();
 
-// if (process.env.NODE_ENV == 'PRODUCTION') {
-//     console.log(path.resolve(__dirname, 'frontend','build'));
-    
-//     app.get('/', (req, res) => {
-//         app.use(express.static(path.resolve(__dirname, 'frontend','build')));
-//         res.sendFile(path.resolve(__dirname, 'frontend','build','index.html'));
-//     });
-// }
 if (process.env.NODE_ENV == 'PRODUCTION') {
-    app.use(express.static(path.join(__dirname, '../frontend/build')));
     
-    app.get('/*', (req, res) => {
+    app.get('*', (req, res) => {
+        app.use(express.static(path.join(__dirname, '../frontend/build')));
         res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
     });
 }
