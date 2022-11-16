@@ -27,13 +27,13 @@ connectDatabase();
 //         res.sendFile(path.resolve(__dirname, 'frontend','build','index.html'));
 //     });
 // }
-// if (process.env.NODE_ENV == 'PRODUCTION') {
-//     app.use(express.static(path.join(__dirname, '../frontend/build')));
+if (process.env.NODE_ENV == 'PRODUCTION') {
+    app.use(express.static(path.join(__dirname, '../frontend/build')));
     
-//     app.get('*', (req, res) => {
-//         res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
-//     });
-// }
+    app.get('/*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+    });
+}
 
 const server = app.listen(process.env.PORT, () => {
     console.log(`Server start on Port: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`);
