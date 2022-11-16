@@ -1,0 +1,283 @@
+{
+    "success": true,
+    "count": 13,
+    "products": [
+        {
+            "_id": "6350fa4eeb0797835e75b536",
+            "name": "Áo Khoác Boris",
+            "price": 295000,
+            "images": [
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b537"
+                },
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-1_49e2c0059c514b5ba90b85068f27d74d_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b538"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 10,
+            "colors": ["trang", "do", "cam", "vang", "tim"],
+            "createAt": "2022-10-20T07:34:14.957Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351005a091533771c983055",
+            "name": "Áo Polo Egan 02",
+            "price": 235000,
+            "images": [
+                {
+                    "public_id": "product/egan-uv-02-com_9fa7298faad0410185461082cd739207_large",
+                    "url": "http://product.hstatic.net/200000247969/product/egan-uv-02-com_9fa7298faad0410185461082cd739207_large.jpg",
+                    "_id": "6351005a091533771c983056"
+                },
+                {
+                    "public_id": "product/egan-uv-02-com_9fa7298faad0410185461082cd739207_large",
+                    "url": "http://product.hstatic.net/200000247969/product/egan-uv-02-cam_2369985f65854ce1ade70e864b900686_large.jpg",
+                    "_id": "6351005a091533771c983057"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351009340967379496e277d",
+            "name": "Áo Khoác Boris",
+            "price": 295000,
+            "images": [
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b537"
+                },
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-1_49e2c0059c514b5ba90b85068f27d74d_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b538"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 10,
+            "colors": ["trang", "do", "cam", "vang", "tim"],
+            "createAt": "2022-10-20T07:34:14.957Z",
+            "__v": 0
+        },
+        {
+            "_id": "635100a9091533771c98305d",
+            "name": "Áo Polo Egan 03",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/ao-thun-ngan-tay-thoi-trang-den-1_353266123569451c9bf4519503a090ed_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-thun-ngan-tay-thoi-trang-do-1_c6edd4c1d6d742e08a3f558f77f9b489_large.jpg",
+                    "_id": "635100a9091533771c98305e"
+                },
+                {
+                    "public_id": "product/ao-thun-ngan-tay-thoi-trang-den-1_353266123569451c9bf4519503a090ed_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-thun-ngan-tay-thoi-trang-den-1_353266123569451c9bf4519503a090ed_large.jpg",
+                    "_id": "635100a9091533771c98305f"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "635100f1091533771c983061",
+            "name": "Bộ Quần Áo Bóng Chuyền SAVIA Nam",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/2_89d7df0e32f84918b592aaf8fc39697e_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/1_02796da770d946a9aae9ce67bd0477b4_large.jpg",
+                    "_id": "635100f1091533771c983062"
+                },
+                {
+                    "public_id": "product/2_89d7df0e32f84918b592aaf8fc39697e_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/2_89d7df0e32f84918b592aaf8fc39697e_large.jpg",
+                    "_id": "635100f1091533771c983063"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "63510117091533771c983065",
+            "name": "Bộ Quần Áo Bóng Chuyền SAVIA Nữ",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/114_f8a0bcaa6f8d4b20b87e803bac91218c_large.jpg",
+                    "_id": "63510117091533771c983066"
+                },
+                {
+                    "public_id": "product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "_id": "63510117091533771c983067"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351012340967379496e277e",
+            "name": "Áo Khoác Boris",
+            "price": 295000,
+            "images": [
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b537"
+                },
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-1_49e2c0059c514b5ba90b85068f27d74d_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b538"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 10,
+            "colors": ["trang", "do", "cam", "vang", "tim"],
+            "createAt": "2022-10-20T07:34:14.957Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351012d40967379496e277f",
+            "name": "Áo Polo Egan 02",
+            "price": 235000,
+            "images": [
+                {
+                    "public_id": "product/egan-uv-02-com_9fa7298faad0410185461082cd739207_large",
+                    "url": "http://product.hstatic.net/200000247969/product/egan-uv-02-com_9fa7298faad0410185461082cd739207_large.jpg",
+                    "_id": "6351005a091533771c983056"
+                },
+                {
+                    "public_id": "product/egan-uv-02-com_9fa7298faad0410185461082cd739207_large",
+                    "url": "http://product.hstatic.net/200000247969/product/egan-uv-02-cam_2369985f65854ce1ade70e864b900686_large.jpg",
+                    "_id": "6351005a091533771c983057"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351013040967379496e2780",
+            "name": "Áo Polo Egan 03",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/ao-thun-ngan-tay-thoi-trang-den-1_353266123569451c9bf4519503a090ed_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-thun-ngan-tay-thoi-trang-do-1_c6edd4c1d6d742e08a3f558f77f9b489_large.jpg",
+                    "_id": "635100a9091533771c98305e"
+                },
+                {
+                    "public_id": "product/ao-thun-ngan-tay-thoi-trang-den-1_353266123569451c9bf4519503a090ed_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-thun-ngan-tay-thoi-trang-den-1_353266123569451c9bf4519503a090ed_large.jpg",
+                    "_id": "635100a9091533771c98305f"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351013940967379496e2781",
+            "name": "Bộ Quần Áo Bóng Chuyền SAVIA Nữ",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/114_f8a0bcaa6f8d4b20b87e803bac91218c_large.jpg",
+                    "_id": "63510117091533771c983066"
+                },
+                {
+                    "public_id": "product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "_id": "63510117091533771c983067"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351013d40967379496e2782",
+            "name": "Áo Khoác Boris",
+            "price": 295000,
+            "images": [
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b537"
+                },
+                {
+                    "public_id": "product/ao-khoac-the-thao-thoi-trang-den-2_acd05b3e352f48e1b46537d2588b40d0_large",
+                    "url": "http://product.hstatic.net/200000247969/product/ao-khoac-the-thao-thoi-trang-den-1_49e2c0059c514b5ba90b85068f27d74d_large.jpg",
+                    "_id": "6350fa4eeb0797835e75b538"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 10,
+            "colors": ["trang", "do", "cam", "vang", "tim"],
+            "createAt": "2022-10-20T07:34:14.957Z",
+            "__v": 0
+        },
+        {
+            "_id": "6351014140967379496e2783",
+            "name": "Bộ Quần Áo Bóng Chuyền SAVIA Nam",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/2_89d7df0e32f84918b592aaf8fc39697e_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/1_02796da770d946a9aae9ce67bd0477b4_large.jpg",
+                    "_id": "635100f1091533771c983062"
+                },
+                {
+                    "public_id": "product/2_89d7df0e32f84918b592aaf8fc39697e_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/2_89d7df0e32f84918b592aaf8fc39697e_large.jpg",
+                    "_id": "635100f1091533771c983063"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T07:52:28.931Z",
+            "__v": 0
+        },
+        {
+            "_id": "63510e273658d9b4e6ed458b",
+            "name": "Bộ Quần Áo Bóng Chuyền SAVIA Nữ",
+            "price": 250000,
+            "images": [
+                {
+                    "public_id": "product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/114_f8a0bcaa6f8d4b20b87e803bac91218c_large.jpg",
+                    "_id": "63510e273658d9b4e6ed458c"
+                },
+                {
+                    "public_id": "product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "url": "http://product.hstatic.net/200000247969/product/115_274e3ffedcb7484e90c75e0cbe368e91_large.jpg",
+                    "_id": "63510e273658d9b4e6ed458d"
+                }
+            ],
+            "category": "Quan ao the thao",
+            "amount": 0,
+            "createAt": "2022-10-20T08:59:43.533Z",
+            "__v": 0
+        }
+    ]
+}
