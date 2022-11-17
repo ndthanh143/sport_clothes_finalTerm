@@ -1,10 +1,24 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const errorMiddleware = require('./middlewares/errors');
 const path = require('path');
+// app.use(()=>(req,res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//     res.setHeader("Access-Control-Allow-Credentials", true);
+//     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
+//     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+//     next();
+// })
 
+const corsOptions = {
+    origin: "https://sport-clothes.netlify.app",
+    credentials: true,
+    optionSuccessStatus:200,
+};
+app.use(cors(corsOptions));
 
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true }, { limit: '50mb' }));

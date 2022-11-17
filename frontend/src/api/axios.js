@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://sport-clothes.herokuapp.com/api/v1/';
+const BASE_URL ='http://127.0.0.1:4000/api/v1/';
 
 console.log(process.env.NODE_ENV);
 export default axios.create({
