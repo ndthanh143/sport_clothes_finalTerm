@@ -14,12 +14,11 @@ const path = require('path');
 // })
 
 const corsOptions = {
-    origin: "https://sport-clothes.netlify.app",
+    origin: true,
     credentials: true,
     optionSuccessStatus:200,
 };
 app.use(cors(corsOptions));
-
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true }, { limit: '50mb' }));
 app.use(cookieParser());
@@ -30,8 +29,8 @@ const order = require('./routes/order');
 const user = require('./routes/user');
 
 
-app.use('/api/v1/', products);
 app.use('/api/v1/', auth);
+app.use('/api/v1/', products);
 app.use('/api/v1/', order);
 app.use('/api/v1/', user);
 
