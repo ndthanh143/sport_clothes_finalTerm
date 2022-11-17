@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://sport-clothes.herokuapp.com/api/v1';
+const BASE_URL ='https://sport-clothes.netlify.app/api/v1/';
 
 console.log(process.env.NODE_ENV);
 export default axios.create({
