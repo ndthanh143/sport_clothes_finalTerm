@@ -5,7 +5,13 @@ const path = require('path');
 
 const dotenv = require('dotenv');
 
-
+const cors = require('cors');
+const corsOptions = {
+    origin: true,
+    credentials: true,
+    optionSuccessStatus:200,
+};
+app.use(cors(corsOptions));
 // Handle Uncaught exceptions
 process.on('uncaughtException', (err) => {
     console.log(`ERROR: ${err.message}`);
@@ -15,22 +21,14 @@ process.on('uncaughtException', (err) => {
 
 //Setting up config file
 dotenv.config({ path: 'backend/config/config.env' });
-app.use((req,res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Credentials", true);
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
-    res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
-    next();
-})
-// const cors = require('cors');
-// const corsOptions = {
-//     origin: true,
-//     credentials: true,
-//     optionSuccessStatus:200,
-//     'Access-Control-Allow-Origin': "*"
-//     // AccessControlAllowCredentials: true,
-// };
-// app.use(cors(corsOptions));
+// app.use((req,res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.setHeader("Access-Control-Allow-Credentials", true);
+//     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
+//     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+//     next();
+// })
+
 
 // Connecting to database
 connectDatabase();
