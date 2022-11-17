@@ -7,9 +7,10 @@ const path = require('path');
 
 const cors = require('cors');
 const corsOptions = {
-    origin: "*",
+    origin: true,
     credentials: true,
-    "Access-Control-Allow-Origin": "*"
+    optionSuccessStatus:200,
+    "Access-Control-Allow-Origin": true
     // AccessControlAllowCredentials: true,
 };
 app.use(cors(corsOptions));

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '~/actions/userActions';
 import { removeItemFromCart } from '~/actions/cartActions';
 import { FaChevronDown } from 'react-icons/fa';
+import Loader from '~/components/Loader';
 
 const cx = classNames.bind(styles);
 
@@ -55,8 +56,8 @@ function MiddleHeader() {
     const handleDropdownClick = (e) => {
         e.stopPropagation();
     };
-    if (loading) {
-    } else {
+    console.log(loading);
+    if (!loading) {
         return (
             <div className={cx('middle')}>
                 <div className={cx('container')}>
@@ -230,6 +231,9 @@ function MiddleHeader() {
                 </div>
             </div>
         );
+        
+    } else {
+        return <Loader/>
     }
 }
 
