@@ -10,7 +10,7 @@ const corsOptions = {
     origin: true,
     credentials: true,
     optionSuccessStatus:200,
-    "Access-Control-Allow-Origin": true
+    'Access-Control-Allow-Origin': "*"
     // AccessControlAllowCredentials: true,
 };
 app.use(cors(corsOptions));
@@ -23,6 +23,13 @@ const auth = require('./routes/auth');
 const order = require('./routes/order');
 const user = require('./routes/user');
 
+app.get('/' , (req,res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Max-Age", "1800");
+    res.setHeader("Access-Control-Allow-Headers", "content-type");
+    res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+})
 app.use('/api/v1/', products);
 app.use('/api/v1/', auth);
 app.use('/api/v1/', order);
