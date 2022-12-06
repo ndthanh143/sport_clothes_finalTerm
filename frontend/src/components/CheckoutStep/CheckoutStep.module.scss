@@ -9,7 +9,7 @@
     width: 150px;
     height: 40px;
     position: relative;
-    background: var(--red-color);
+    background: var(--orange-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
         bottom: 0;
         width: 0;
         height: 0;
-        border-left: 20px solid var(--red-color);
+        border-left: 20px solid var(--orange-color);
         border-top: 20px solid transparent;
         border-bottom: 20px solid transparent;
     }

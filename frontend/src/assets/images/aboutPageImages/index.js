@@ -9,7 +9,7 @@ const aboutPageImages = [
     require('~/assets/images/aboutPageImages/img8.jpg'),
     require('~/assets/images/aboutPageImages/img9.jpg'),
     require('~/assets/images/aboutPageImages/img10.jpg'),
-    require('~/assets/images/aboutPageImages/img11.jpg'),
+    // require('~/assets/images/aboutPageImages/img11.jpg'),
 ];
 
 export default aboutPageImages;

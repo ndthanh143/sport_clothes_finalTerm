@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { clearErrors } from '~/actions/productActions';
 import { deleteUser, getAllUsers } from '~/actions/userActions';
 import Loader from '~/components/Loader';
+import { DELETE_USER_RESET } from '~/constants/userConstants';
 import styles from './ListUser.module.scss';
 
 const cx = classNames.bind(styles);
@@ -31,6 +32,7 @@ function ListUsers() {
 
         if (isDeleted) {
             alert('Deleted successfully!!');
+            dispatch({ type: DELETE_USER_RESET });
         }
     }, [dispatch, isDeleted, deleteError]);
 
@@ -63,9 +65,11 @@ function ListUsers() {
                                 <div className={cx('field', 'email')}>{item.email}</div>
                                 <div className={cx('field', 'role')}>{item.role}</div>
                                 <div className={cx('field', 'action')}>
-                                    <button className={cx('edit')}>
-                                        <FaPen />
-                                    </button>
+                                    <Link to={`/admin/user/edit/${item._id}`}>
+                                        <button className={cx('edit')}>
+                                            <FaPen />
+                                        </button>
+                                    </Link>
                                     <button className={cx('delete')} onClick={() => handleDeleteUser(item._id)}>
                                         <FaTrash />
                                     </button>

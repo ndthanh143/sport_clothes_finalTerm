@@ -75,7 +75,7 @@
     cursor: pointer;
 
     &:hover {
-        color: var(--red-color);
+        color: var(--orange-color);
         transition: all 0.3s ease-in-out;
     }
 }
@@ -85,6 +85,6 @@
     font-size: 1.4rem;
     margin-top: 8px;
     b {
-        color: var(--red-color);
+        color: var(--orange-color);
     }
 }

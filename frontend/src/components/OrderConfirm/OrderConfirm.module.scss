@@ -47,7 +47,19 @@
     .description {
         flex: 1;
         margin-left: 20px;
-        margin-top: 20px;
+        margin-top: 10px;
+
+        .name{
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .size {
+            font-size: 1.4rem;
+        }
+        .color {
+            font-size: 1.4rem;
+        }
     }
     .total {
         width: 40%;

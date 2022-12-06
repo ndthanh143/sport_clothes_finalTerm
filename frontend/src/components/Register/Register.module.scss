@@ -1,4 +1,6 @@
 .container {
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .heading {
@@ -64,15 +66,15 @@
     color: #677279;
 
     a {
-        color: #ed1c24;
+        color: var(--orange-color);
     }
 }
 
 .error-log {
     font-size: 1.4rem;
-    color: var(--red-color);
+    color: var(--orange-color);
 }
 .error-input {
-    border: 1px solid var(--red-color) !important;
-    color: var(--red-color) !important;
+    border: 1px solid var(--orange-color) !important;
+    color: var(--orange-color) !important;
 }

@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './Navbar.module.scss';
 import config from '~/config';
 import Menu, { MenuItem } from './Menu';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -19,22 +20,19 @@ function NavBar() {
             setIsSticky(false);
         }
     };
-    useEffect(() => {
-        window.addEventListener('scroll', controlNavbar);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', controlNavbar);
 
-        return () => {
-            window.removeEventListener('scroll', controlNavbar);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('scroll', controlNavbar);
+    //     };
+    // }, []);
 
     return (
         <div className={cx('container', navbarSticky && 'navbar-sticky')}>
             <div className={cx('navbar-wrapper')}>
                 <div className={cx('logo')}>
-                    <img
-                        src="//theme.hstatic.net/200000247969/1000814323/14/logo.png?v=37"
-                        alt="Công ty TNHH Thể thao CP"
-                    />
+                    <img src={images.logo} alt="Shop quần áo Duy Thanh" />
                 </div>
                 <div className={cx('menu-wrapper')}>
                     <Menu isSticky={isSticky}>
@@ -45,7 +43,6 @@ function NavBar() {
                             icon={<FaChevronUp />}
                             hasSubmenu
                         />
-                        <MenuItem title="Tin tức &amp; sự kiện" to={config.routes.news} />
                         <MenuItem title="Giới thiệu" to={config.routes.about} />
                         <MenuItem title="Liên hệ" to={config.routes.contact} />
                     </Menu>

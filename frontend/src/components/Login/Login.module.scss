@@ -1,4 +1,6 @@
 .container {
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .heading {
@@ -63,6 +65,6 @@
     color: #677279;
 
     a {
-        color: #ed1c24;
+        color: var(--orange-color);
     }
 }

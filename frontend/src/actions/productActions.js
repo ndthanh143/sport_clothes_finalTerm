@@ -26,7 +26,7 @@ import {
 } from '../constants/productConstants';
 
 export const getAllProducts =
-    (currentPage = 1, category) =>
+    (currentPage = 1, category, price) =>
     async (dispatch) => {
         try {
             dispatch({
@@ -34,9 +34,20 @@ export const getAllProducts =
             });
 
             let link = `products?page=${currentPage}`;
-            if (category) {
+            if (price) {
+                if (category) {
+                    link = `products?page=${currentPage}&category=${category}&price[gte]=${price[0]}&price[lte]=${price[1]}`;
+                } else {
+                    link = `products?page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}`;
+                }
+            } else if (category) {
                 link = `products?page=${currentPage}&category=${category}`;
             }
+
+            if (currentPage == 0) {
+                link = 'products';
+            }
+
             const { data } = await axios.get(link);
             dispatch({
                 type: ALL_PRODUCTS_SUCCESS,
@@ -112,7 +123,7 @@ export const getAdminProducts = () => async (dispatch) => {
     }
 };
 
-export const newProduct = (name, price, category, stock, images) => async (dispatch) => {
+export const newProduct = (name, price, category, stock, images, colorList, sizes, description) => async (dispatch) => {
     try {
         dispatch({ type: NEW_PRODUCT_REQUEST });
 
@@ -120,8 +131,11 @@ export const newProduct = (name, price, category, stock, images) => async (dispa
             name,
             price,
             category,
-            amount: stock,
+            stock,
             images,
+            colors: colorList,
+            sizes,
+            description,
         };
         const config = {
             headers: {
@@ -135,29 +149,34 @@ export const newProduct = (name, price, category, stock, images) => async (dispa
     }
 };
 
-export const updateProduct = (id, name, price, category, stock, images) => async (dispatch) => {
-    try {
-        dispatch({ type: UPDATE_PRODUCT_REQUEST });
+export const updateProduct =
+    (id, name, price, category, stock, images, colorList, sizes, description) => async (dispatch) => {
+        try {
+            dispatch({ type: UPDATE_PRODUCT_REQUEST });
 
-        const productData = {
-            name,
-            price,
-            category,
-            amount: stock,
-            images,
-        };
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-        const { data } = await axios.put(`admin/product/${id}`, JSON.stringify(productData), config);
+            const productData = {
+                name,
+                price,
+                category,
+                stock,
+                images,
+                colors: colorList,
+                sizes,
+                stock,
+                description,
+            };
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            };
+            const { data } = await axios.put(`admin/product/${id}`, JSON.stringify(productData), config);
 
-        dispatch({ type: UPDATE_PRODUCT_SUCCESS, payload: data });
-    } catch (error) {
-        dispatch({ type: UPDATE_PRODUCT_FAIL, payload: error.message });
-    }
-};
+            dispatch({ type: UPDATE_PRODUCT_SUCCESS, payload: data });
+        } catch (error) {
+            dispatch({ type: UPDATE_PRODUCT_FAIL, payload: error.message });
+        }
+    };
 
 export const deleteProduct = (id) => async (dispatch) => {
     try {

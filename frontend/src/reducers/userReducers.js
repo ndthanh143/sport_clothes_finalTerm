@@ -20,6 +20,9 @@ import {
     DELETE_USER_REQUEST,
     DELETE_USER_SUCCESS,
     DELETE_USER_FAIL,
+    ADMIN_USER_REQUEST,
+    ADMIN_USER_SUCCESS,
+    ADMIN_USER_FAIL,
 } from '~/constants/userConstants';
 
 export const authReducer = (state = { user: {}, users: [] }, action) => {
@@ -163,26 +166,50 @@ export const updateUserReducer = (state = { user: {} }, action) => {
             return {
                 ...state,
                 loading: false,
-                success: action.payload.success,
+                isUpdated: action.payload,
                 user: action.payload.user,
             };
         case UPDATE_USER_FAIL:
             return {
                 ...state,
                 loading: false,
-                success: action.payload.success,
+                isUpdated: action.payload,
             };
-
-        // case NEW_USER_RESET:
-        //     return {
-        //         ...state,
-        //     };
         case CLEAR_ERRORS:
             return {
                 ...state,
                 error: null,
             };
 
+        default:
+            return state;
+    }
+};
+
+export const userDetailReducer = (state = { user: {} }, action) => {
+    switch (action.type) {
+        case ADMIN_USER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            };
+        case ADMIN_USER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                user: action.payload,
+            };
+        case ADMIN_USER_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null,
+            };
         default:
             return state;
     }

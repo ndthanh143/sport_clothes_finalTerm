@@ -68,7 +68,7 @@ function ListProducts() {
                                 <div className={cx('field', 'id')}>{item._id}</div>
                                 <div className={cx('field', 'name')}>{item.name}</div>
                                 <div className={cx('field', 'price')}>{item.price}</div>
-                                <div className={cx('field', 'stock')}>{item.amount}</div>
+                                <div className={cx('field', 'stock')}>{item.stock}</div>
                                 <div className={cx('field', 'category')}>{item.category}</div>
 
                                 <div className={cx('field', 'action')}>

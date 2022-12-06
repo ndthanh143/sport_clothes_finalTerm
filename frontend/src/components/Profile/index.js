@@ -11,8 +11,14 @@ function Profile() {
             <div className={cx('info')}>
                 <h4 className={cx('title')}>Thông tin tài khoản</h4>
                 <div className={cx('detail')}>
-                    <p className={cx('text', 'userName')}>{user.name}</p>
-                    <p className={cx('text')}>{user.email}</p>
+                    <p className={cx('text', 'userName')}>
+                        <b>Tên chủ tài khoản: </b>
+                        {user.name}
+                    </p>
+                    <p className={cx('text')}>
+                        <b>Email: </b>
+                        {user.email}
+                    </p>
                     <p className={cx('text')}>Việt Nam</p>
                 </div>
             </div>

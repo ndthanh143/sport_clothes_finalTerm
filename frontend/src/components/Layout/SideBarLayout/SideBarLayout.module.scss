@@ -7,10 +7,6 @@
     width: 20%;
     min-height: 100vh;
     background-color: rgb(214, 214, 214);
-
-    .icon-nav {
-        margin-right: 10px;
-    }
 }
 
 .sidebar-list {
@@ -22,6 +18,9 @@
 
         &:hover {
             background-color: #666;
+        }
+        .icon-nav {
+            margin-right: 10px;
         }
     }
 }
@@ -67,5 +66,5 @@
 //
 .content {
     flex: 1;
-    background-color: #ccc;
+    // background-color: #ccc;
 }

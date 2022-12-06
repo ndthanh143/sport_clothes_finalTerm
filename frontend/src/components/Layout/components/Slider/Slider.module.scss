@@ -38,8 +38,8 @@
             cursor: pointer;
         }
         .active {
-            background-color: #ed1c24;
-            border-color: #ed1c24;
+            background-color: var(--orange-color);
+            border-color: var(--orange-color);
         }
     }
 

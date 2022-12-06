@@ -10,31 +10,63 @@ import {
     newProductReducer,
     updateProductReducer,
 } from './reducers/productReducers';
-import { authReducer, deleteUserReducer, updateUserReducer } from './reducers/userReducers';
+import { authReducer, deleteUserReducer, updateUserReducer, userDetailReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
-import { ordersReducer, newOrderReducer, myOrdersReducer, orderDetailsReducer } from './reducers/ordersReducers';
+import {
+    ordersReducer,
+    newOrderReducer,
+    myOrdersReducer,
+    orderDetailsReducer,
+    updateOrderReducer,
+    deleteOrderReducer,
+} from './reducers/ordersReducers';
+import { categoryReducer } from './reducers/categoryReducers';
+import {
+    deleteMessageReducer,
+    messageDetailsReducer,
+    messagesReducer,
+    newMessageReducer,
+    updateMessageReducer,
+} from './reducers/messageReducers';
 
 const reducers = combineReducers({
+    // authentication
     auth: authReducer,
+    // product
     products: productsReducer,
     productDetails: productDetailsReducer,
     productSearch: productSearchReducer,
     deleteProduct: deleteProductReducer,
     newProduct: newProductReducer,
     updateProduct: updateProductReducer,
+    // user
     updateUser: updateUserReducer,
     deleteUser: deleteUserReducer,
+    userDetails: userDetailReducer,
+    // cart
     cart: cartReducer,
+    // order
     orders: ordersReducer,
     newOrder: newOrderReducer,
     myOrders: myOrdersReducer,
     orderDetails: orderDetailsReducer,
+    updateOrder: updateOrderReducer,
+    deleteOrder: deleteOrderReducer,
+    // category
+    category: categoryReducer,
+    // message
+    messages: messagesReducer,
+    newMessage: newMessageReducer,
+    messageDetails: messageDetailsReducer,
+    updateMessage: updateMessageReducer,
+    deleteMessage: deleteMessageReducer,
 });
 
 let initialState = {
     cart: {
         cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],
         shippingInfo: localStorage.getItem('shippingInfo') ? JSON.parse(localStorage.getItem('shippingInfo')) : {},
+        notation: localStorage.getItem('notation') ? JSON.parse(localStorage.getItem('notation')) : '',
     },
 };
 

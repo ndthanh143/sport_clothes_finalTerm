@@ -32,7 +32,9 @@ const ProductImagesSlider = ({ product }) => {
                 onSwiper={setActiveThumb}
                 loop={true}
                 spaceBetween={10}
-                slidesPerView={imageUrls.length > 5 ? 5 : imageUrls.length}
+                // slidesPerView={imageUrls.length > 5 ? 5 : imageUrls.length}
+                slidesPerView={5}
+
                 modules={[Navigation, Thumbs]}
                 className="product-images-slider-thumbs"
             >

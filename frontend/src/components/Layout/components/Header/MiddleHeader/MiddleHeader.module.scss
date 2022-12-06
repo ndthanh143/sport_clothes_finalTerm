@@ -2,20 +2,51 @@
     background-color: var(--middle-header);
 }
 .container {
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 14px 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: var(--midle-menu-width);
-    max-width: 100%;
+    // width: var(--midle-menu-width);
+    // max-width: 100%;
 }
 
 .logo {
+    width: 15%;
+    border-right: 1px solid #ededed;
+    display: flex;
+    justify-content: center;
+    img {
+        max-height: 70px;
+    }
 }
 
-.logo img {
-    max-height: 70px;
+.search {
+    width: 30%;
+}
+
+.information {
+    display: flex;
+    cursor: text;
+    .box {
+        padding: 0 20px;
+        .title {
+            color: var(--orange-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .sub-title {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+    }
+
+    .box + .box {
+        border-left: 1px solid #ededed;
+    }
 }
 
 .action {
@@ -96,12 +127,12 @@
                 .item {
                     cursor: pointer !important;
                     &:hover {
-                        color: var(--red-color);
+                        color: var(--orange-color);
                     }
 
                     a {
                         &:hover {
-                            color: var(--red-color);
+                            color: var(--orange-color);
                         }
                     }
                 }
@@ -122,10 +153,9 @@
 .box-icon {
     width: 32px;
     position: relative;
-    img {
-        height: 40px;
-        width: 22px;
-    }
+    // background-color: #000;
+    color: #000;
+    font-size: 2.5rem;
 }
 .arrow-drop {
     font-size: 1.4rem;
@@ -135,7 +165,7 @@
 }
 
 .count-holder {
-    background-color: var(--search-btn-color);
+    background-color: var(--orange-color);
     color: var(--primary);
     position: absolute;
     display: flex;
@@ -144,7 +174,7 @@
     line-height: 16px;
     border-radius: 50%;
     justify-content: center;
-    top: 4px;
+    top: 0px;
     right: 4px;
 }
 
@@ -152,7 +182,7 @@
     font-size: 1rem;
 }
 .box-text {
-    color: var(--text-white-color);
+    color: var(--text-black-color);
     font-size: 1.5rem;
 }
 
@@ -218,9 +248,14 @@
                     text-transform: uppercase;
                 }
                 .value {
+                    .props {
+                        // margin-bottom: 10px;
+                        padding-bottom: 10px;
+                        font-size: 1.3rem;
+                    }
                     .quantity {
                         font-size: 1.4rem;
-                        padding: 6px 12px;
+                        padding: 2px 12px;
                         margin-right: 12px;
                         background-color: #f7f7f7;
                         color: var(--text-color);

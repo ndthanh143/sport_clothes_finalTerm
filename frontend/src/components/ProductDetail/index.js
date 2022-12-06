@@ -15,8 +15,9 @@ const cx = classNames.bind(styles);
 function ProductDetail({ product }) {
     const { id } = useParams();
 
-    const [chooseSize, setChooseSize] = useState('');
+    const [chooseSize, setChooseSize] = useState(0);
     const [quantity, setQuantity] = useState(1);
+    const [chooseColor, setChooseColor] = useState(0);
 
     const handleIncrement = () => {
         setQuantity(quantity + 1);
@@ -26,10 +27,14 @@ function ProductDetail({ product }) {
             setQuantity(quantity - 1);
         }
     };
+
     const dispatch = useDispatch();
+    console.log(product.colors);
 
     const addToCart = () => {
-        dispatch(addItemToCart(id, quantity));
+        const size = product.sizes[chooseSize].value;
+        const color = product.colors[chooseColor];
+        dispatch(addItemToCart(id, quantity, size, color));
         alert('Item added successfully to cart');
     };
 
@@ -46,38 +51,29 @@ function ProductDetail({ product }) {
                     <div className={cx('size')}>
                         <div className={cx('header')}>Kích thước:</div>
                         <div className={cx('select')}>
-                            <div className={cx('element')}>
-                                <SizeSelection size="S" />
-                            </div>
-                            <div className={cx('element')}>
-                                <SizeSelection size="M" />
-                            </div>
-                            <div className={cx('element')}>
-                                <SizeSelection size="L" />
-                            </div>
-                            <div className={cx('element')}>
-                                <SizeSelection size="XL" />
-                            </div>
-                            <div className={cx('element')}>
-                                <SizeSelection size="2XL" />
-                            </div>
+                            {product.sizes.map((item, index) => (
+                                <div className={cx('element')} key={index}>
+                                    <SizeSelection
+                                        size={item.value}
+                                        onChange={() => setChooseSize(index)}
+                                        checked={index == chooseSize}
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className={cx('colors')}>
                         <div className={cx('header')}>Màu sắc: </div>
                         <div className={cx('select')}>
-                            <div className={cx('element')}>
-                                <ColorSelection color={'red'} />
-                            </div>
-                            <div className={cx('element')}>
-                                <ColorSelection color={'yellow'} />
-                            </div>
-                            <div className={cx('element')}>
-                                <ColorSelection color={'orange'} />
-                            </div>
-                            <div className={cx('element')}>
-                                <ColorSelection color={'purple'} />
-                            </div>
+                            {product.colors.map((item, index) => (
+                                <div className={cx('element')} key={index}>
+                                    <ColorSelection
+                                        color={item}
+                                        onChange={() => setChooseColor(index)}
+                                        checked={index == chooseColor}
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className={cx('action')}>
@@ -121,7 +117,7 @@ function ProductDetail({ product }) {
                     </li>
                 </ul>
             </div>
-            <div className={cx('description')}>{galleries[0].description()}</div>
+            <div className={cx('description')}>{product.description}</div>
         </div>
     );
 }

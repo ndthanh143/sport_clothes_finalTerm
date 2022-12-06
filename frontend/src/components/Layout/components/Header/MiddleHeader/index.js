@@ -8,8 +8,10 @@ import Search from '~/components/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '~/actions/userActions';
 import { removeItemFromCart } from '~/actions/cartActions';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaUser, FaUserAlt } from 'react-icons/fa';
 import Loader from '~/components/Loader';
+import { AiOutlineUser } from 'react-icons/ai';
+import { BsCartDash } from 'react-icons/bs';
 
 const cx = classNames.bind(styles);
 
@@ -44,8 +46,8 @@ function MiddleHeader() {
         }
     };
 
-    const handleDeleteProduct = (id) => {
-        dispatch(removeItemFromCart(id));
+    const handleDeleteProduct = (item) => {
+        dispatch(removeItemFromCart(item));
     };
 
     const handleLogout = () => {
@@ -56,20 +58,28 @@ function MiddleHeader() {
     const handleDropdownClick = (e) => {
         e.stopPropagation();
     };
-    console.log(loading);
     if (!loading) {
         return (
             <div className={cx('middle')}>
                 <div className={cx('container')}>
                     <div className={cx('logo')}>
                         <Link to="/">
-                            <img
-                                src="//theme.hstatic.net/200000247969/1000814323/14/logo.png?v=37"
-                                alt="Công ty TNHH Thể thao CP"
-                            />
+                            <img src={images.logo} alt="Shop hàng Nguyễn Duy Thanh" />
                         </Link>
                     </div>
-                    <Search />
+                    <div className={cx('search')}>
+                        <Search />
+                    </div>
+                    <div className={cx('information')}>
+                        <div className={cx('box')}>
+                            <p className={cx('title')}>0354560042</p>
+                            <p className={cx('sub-title')}>Tư vấn miễn phí</p>
+                        </div>
+                        <div className={cx('box')}>
+                            <p className={cx('title')}>FREE SHIPPING</p>
+                            <p className={cx('sub-title')}>Đơn hàng trên 1 Triệu đồng</p>
+                        </div>
+                    </div>
                     <div className={cx('action')}>
                         <div
                             className={actionShow.account ? cx('account', 'js-action-show') : cx('account')}
@@ -81,12 +91,9 @@ function MiddleHeader() {
                                 <div className={cx('text')}>
                                     <div className={cx('link')}>
                                         <span className={cx('box-icon')}>
-                                            <img src={images.user} alt="User" />
+                                            <AiOutlineUser />
                                         </span>
-                                        <span className={cx('box-text')}>
-                                            Tài khoản của <br />
-                                            {user.name}
-                                        </span>
+                                        <span className={cx('box-text')}>Tài khoản của tôi</span>
                                         <span className={cx('arrow-drop')}>
                                             <FaChevronDown />
                                         </span>
@@ -96,7 +103,7 @@ function MiddleHeader() {
                                 <Link to="/login" className={cx('text')}>
                                     <div className={cx('link')}>
                                         <span className={cx('box-icon')}>
-                                            <img src={images.user} alt="User" />
+                                            <AiOutlineUser />
                                         </span>
                                         <span className={cx('box-text')}>Đăng nhập / Đăng ký</span>
                                     </div>
@@ -138,7 +145,8 @@ function MiddleHeader() {
                             <div className={cx('text')}>
                                 <div className={cx('link')}>
                                     <span className={cx('box-icon')}>
-                                        <img src={images.cart} alt="Cart" />
+                                        {/* <img src={images.cart} alt="Cart" /> */}
+                                        <BsCartDash />
                                         <span className={cx('count-holder')}>
                                             <span className={cx('count')}>{cartItems.length}</span>
                                         </span>
@@ -165,6 +173,9 @@ function MiddleHeader() {
                                                             <div className={cx('content')}>
                                                                 <p className={cx('name')}>{item.name}</p>
                                                                 <div className={cx('value')}>
+                                                                    <div className={cx('props')}>
+                                                                        {item.size} / {item.color}
+                                                                    </div>
                                                                     <span className={cx('quantity')}>
                                                                         {item.quantity}
                                                                     </span>
@@ -180,7 +191,7 @@ function MiddleHeader() {
                                                             <button
                                                                 className={cx('delete-button')}
                                                                 onClick={() => {
-                                                                    handleDeleteProduct(item.product);
+                                                                    handleDeleteProduct(item);
                                                                 }}
                                                             >
                                                                 X
@@ -215,7 +226,7 @@ function MiddleHeader() {
                                                     </td>
                                                     <td>
                                                         <span className={cx('link-to-pay')}>
-                                                            <Button primaryReverse to="/checkout">
+                                                            <Button primaryReverse to="/shipping">
                                                                 thanh toán
                                                             </Button>
                                                         </span>
@@ -231,9 +242,8 @@ function MiddleHeader() {
                 </div>
             </div>
         );
-        
     } else {
-        return <Loader/>
+        return <Loader />;
     }
 }
 

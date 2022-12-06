@@ -13,13 +13,13 @@ function Footer() {
                 <div className={cx('footer-content')}>
                     <div className={cx('widget-wrapper', 'row')}>
                         <div className={cx('widget', 'col-2')}>
-                            <h4 className={cx('title')}>Về CP Sport</h4>
+                            <h4 className={cx('title')}>Về Duy Thanh Sport</h4>
                             <div className={cx('content')}>
                                 <div className={cx('text-about', 'col-2')}>
                                     <p>
-                                        Trang mua sắm trực tuyến của thương hiệu thể thao CP SPORT, trang phục thi đấu,
-                                        phụ kiện, thời trang thể thao giúp bạn tiếp cận xu hướng thời trang thể thao mới
-                                        nhất.
+                                        Trang mua sắm tẹt ga thoải mái từ A - B, Giao hàng siêu tốc như cách người yêu
+                                        cũ bỏ bạn !! Đùa thôi, Đây là đồ án hơi hơi tâm huyết của tui, chúc bạn dạo chơi
+                                        dui dẻ ^^
                                     </p>
                                     <div className={cx('logo')}>
                                         <img src={logos[0].url} />
@@ -29,14 +29,13 @@ function Footer() {
                                 <div className={cx('address', 'col-2')}>
                                     <ul>
                                         <li>
-                                            <b>Địa chỉ: </b>766A/30-32 Lạc Long Quân, Phường 9, Quận Tân Bình, TP. Hồ
-                                            Chí Minh
+                                            <b>Địa chỉ: </b>51 Linh Trung, Thành Phố Thủ Đức, Thành Phố Hồ Chí Minh
                                         </li>
                                         <li>
-                                            <b>Điện thoại: </b>0926.682.682
+                                            <b>Điện thoại: </b>0354.560.042
                                         </li>
                                         <li>
-                                            <b>Email: </b>info@cp-sport.vn
+                                            <b>Email: </b>nguyenduythanh421.tna@gmail.com
                                         </li>
                                     </ul>
                                 </div>
@@ -48,42 +47,42 @@ function Footer() {
                                 <div className={cx('content')}>
                                     <ul className={cx('list-item')}>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Thông tin tuyển dụng
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Tìm kiếm
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Giới thiệu
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Chính sách đổi trả
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Chính sách Cộng tác viên &amp; Đại lý
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Hướng dẫn mua hàng
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Chính sách bảo mật
                                             </Link>
                                         </li>
                                         <li className={cx('item')}>
-                                            <Link className={cx('link')} to="/">
+                                            <Link className={cx('link')} to="#">
                                                 Hướng dẫn cách thanh toán và áp dụng Voucher trên REEPAY
                                             </Link>
                                         </li>
@@ -98,21 +97,21 @@ function Footer() {
                     </div>
                 </div>
                 <div className={cx('btns')}>
-                    <Link to="/" className={cx('btn')}>
+                    <Link to="#" className={cx('btn')}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60">
                             <polyline points="179,1 179,59 1,59 1,1 179,1" />
                             <polyline points="179,1 179,59 1,59 1,1 179,1" />
                         </svg>
                         <span>Shopee</span>
                     </Link>
-                    <Link to="/" className={cx('btn')}>
+                    <Link to="#" className={cx('btn')}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60">
                             <polyline points="179,1 179,59 1,59 1,1 179,1" />
                             <polyline points="179,1 179,59 1,59 1,1 179,1" />
                         </svg>
                         <span>Lazada</span>
                     </Link>
-                    <Link to="/" className={cx('btn')}>
+                    <Link to="#" className={cx('btn')}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="180px" height="60px" viewBox="0 0 180 60">
                             <polyline points="179,1 179,59 1,59 1,1 179,1" />
                             <polyline points="179,1 179,59 1,59 1,1 179,1" />
@@ -123,16 +122,14 @@ function Footer() {
             </div>
             <div className={cx('copyright')}>
                 <p>
-                    CÔNG TY TNHH THỂ THAO CP <br />
-                    Mã số doanh nghiệp: 0313091407 Do Sở Kế Hoạch Và Đầu Tư TP.HCM cấp ngày 13/01/2015, sửa đổi bổ sung
-                    ngày 19/12/2019
+                    Shop nhỏ của Nguyễn Duy Thanh <br />
                     <br />
-                    Người đại diện: Trần Văn Hoàn
+                    Người đại diện: Nguyễn Duy Thanh
                 </p>
                 <p>
                     Copyright ©{' '}
-                    <a href="/" className={cx('link')}>
-                        2022 Công ty TNHH Thể thao CP
+                    <a href="#" className={cx('link')}>
+                        Olalalala
                     </a>
                     .
                 </p>

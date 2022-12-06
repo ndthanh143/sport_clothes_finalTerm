@@ -123,8 +123,22 @@
     }
 }
 .fieldStock {
+    .label {
+        margin-left: 4px;
+    }
+    .value {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    span {
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+    }
     input {
-        width: 80px;
+        margin-left: 30px;
+        width: 60px;
         height: 30px;
         font-size: 1.5rem;
         padding: 15px 8px;
@@ -132,9 +146,7 @@
         border: 1px solid #ededed;
         outline: none;
     }
-    .label {
-        margin-left: 4px;
-    }
+    
 }
 
 .fieldDescription {

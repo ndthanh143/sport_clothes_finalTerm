@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaBook, FaChevronDown, FaProductHunt } from 'react-icons/fa';
-import { AiFillDashboard } from 'react-icons/ai';
+import { AiFillDashboard, AiFillMessage } from 'react-icons/ai';
 import { BsFillHandbagFill, BsFillPeopleFill } from 'react-icons/bs';
 import { GrFormAdd } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
@@ -85,6 +85,14 @@ function SideBarLayout({ children }) {
                                     <BsFillPeopleFill />
                                 </span>
                                 Users
+                            </Link>
+                        </li>
+                        <li className={cx('sidebar-item', 'message')}>
+                            <Link to="/admin/messages">
+                                <span className={cx('icon-nav')}>
+                                    <AiFillMessage />
+                                </span>
+                                Messages
                             </Link>
                         </li>
                     </ul>

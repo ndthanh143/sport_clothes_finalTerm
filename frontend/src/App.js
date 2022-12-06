@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from './routes';
 import { DefaultLayout } from './components/Layout';
 import ScrollToTop from './ScrollToTop';
@@ -7,12 +7,28 @@ import { useEffect } from 'react';
 import store from './store';
 import { loadUser } from './actions/userActions';
 import Loader from './components/Loader';
+import { getAllProducts } from './actions/productActions';
+import { removeItemFromCart } from './actions/cartActions';
+import Login from './components/Login';
 
 function App() {
-    const { loading, isAuthenticated } = useSelector((state) => state.auth);
+    const { loading, isAuthenticated, user } = useSelector((state) => state.auth);
+    const { cartItems } = useSelector((state) => state.cart);
+    const { products } = useSelector((state) => state.products);
+
+    const dispatch = useDispatch();
     useEffect(() => {
-        store.dispatch(loadUser());
+        dispatch(loadUser());
+        dispatch(getAllProducts());
     }, []);
+    if (products.length > 0) {
+        cartItems.map((item) => {
+            let temp = products.find((product) => item.product === product._id);
+            if (!temp) {
+                dispatch(removeItemFromCart(item));
+            }
+        });
+    }
 
     return (
         <Router>
@@ -43,7 +59,7 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    isAuthenticated ? (
+                                    isAuthenticated && user.role === 'admin' ? (
                                         <Layout>
                                             <Page />
                                         </Layout>

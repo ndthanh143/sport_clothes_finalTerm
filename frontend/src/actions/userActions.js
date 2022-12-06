@@ -19,6 +19,12 @@ import {
     DELETE_USER_REQUEST,
     DELETE_USER_SUCCESS,
     DELETE_USER_FAIL,
+    UPDATE_USER_REQUEST,
+    UPDATE_USER_SUCCESS,
+    UPDATE_USER_FAIL,
+    ADMIN_USER_REQUEST,
+    ADMIN_USER_SUCCESS,
+    ADMIN_USER_FAIL,
 } from '../constants/userConstants';
 
 // Get all users
@@ -35,6 +41,36 @@ export const getAllUsers = () => async (dispatch) => {
     }
 };
 
+export const getAdminUser = (id) => async (dispatch) => {
+    try {
+        dispatch({ type: ADMIN_USER_REQUEST });
+        const { data } = await axios.get(`admin/user/${id}`);
+        dispatch({ type: ADMIN_USER_SUCCESS, payload: data.user });
+    } catch (error) {
+        dispatch({ type: ADMIN_USER_FAIL, payload: error });
+    }
+};
+export const updateUser = (id, name, role) => async (dispatch) => {
+    try {
+        dispatch({ type: UPDATE_USER_REQUEST });
+
+        const userData = {
+            name,
+            role,
+        };
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+        const { data } = await axios.put(`admin/user/${id}`, JSON.stringify(userData), config);
+
+        dispatch({ type: UPDATE_USER_SUCCESS, payload: data });
+    } catch (error) {
+        dispatch({ type: UPDATE_USER_FAIL, payload: error.message });
+    }
+};
+
 export const deleteUser = (id) => async (dispatch) => {
     try {
         dispatch({ type: DELETE_USER_REQUEST });
@@ -44,8 +80,6 @@ export const deleteUser = (id) => async (dispatch) => {
         dispatch({ type: DELETE_USER_FAIL, payload: error });
     }
 };
-
-// export const updateUser = (id,)
 
 // Login
 export const login = (email, password) => async (dispatch) => {
@@ -103,7 +137,7 @@ export const loadUser = () => async (dispatch) => {
         dispatch({
             type: LOAD_USER_REQUEST,
         });
-        
+
         const { data } = await axios.get('me');
         dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
     } catch (error) {

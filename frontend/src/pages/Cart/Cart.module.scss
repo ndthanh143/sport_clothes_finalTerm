@@ -43,76 +43,130 @@
     padding: 0 15px;
 }
 
-.product {
-    border-bottom: 1px solid #f1f1f1;
-    margin-top: 10px;
-    padding-bottom: 10px;
+.field-bar {
+    display: flex;
+    border-bottom: 1px solid #ededed;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 20px;
+    padding-top: 10px;
 
-    .product-content {
-        display: flex;
+    .thumb {
+        width: 25%;
+    }
+
+    .description {
         flex: 1;
+    }
 
-        .thumb {
-            width: 80px;
-            border: 1px solid #ededed;
+    .price {
+        width: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quantity {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .calc {
+        width: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.product {
+    display: flex;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #ccc;
+    padding: 30px 0;
+    .thumb {
+        width: 25%;
+        display: flex;
+        align-items: center;
+
+        .clear-btn {
+            width: 20px;
+            font-size: 2rem;
+            color: #333;
+            opacity: 0.8;
+            cursor: pointer;
+            margin-right: 40px;
+
+            &:hover {
+                color: red;
+            }
+        }
+
+        .image {
+            width: 45%;
             img {
                 width: 100%;
             }
         }
+    }
 
-        .description {
-            margin-left: 26px;
+    .description {
+        flex: 1;
+        margin: auto 0;
+        .name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-            .name {
-                font-weight: 700;
-                font-size: 1.5rem;
-            }
-            .quantity {
-                margin-top: 10px;
-                display: flex;
+        .size {
+            margin-bottom: 4px;
+        }
+    }
 
-                .value {
-                    display: flex;
+    .price {
+        width: 12%;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-                    align-items: center;
-                    justify-content: center;
-                    width: 35px;
-                    height: 25px;
-                    border: 1px solid #ededed;
-                }
+    .quantity {
+        width: 15%;
+        font-weight: 600;
 
-                .increase,
-                .decrease {
-                    display: flex;
-                    cursor: pointer;
-                    border: none;
-                    align-items: center;
-                    justify-content: center;
-                    width: 25px;
-                    height: 25px;
-                    background-color: #f3f4f4;
-                }
-            }
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-            .price {
-                margin-top: 10px;
-                font-size: 1.5rem;
-                font-weight: 700;
+        .value {
+            border: 1px solid #ededed;
+            padding: 5px 10px;
+        }
+
+        .action {
+            margin-left: 10px;
+            .action-btn {
+                display: block;
+                margin: 4px 0;
+                width: 40px;
+                padding: 4px 0;
+                cursor: pointer;
+                border: solid 1px #ccc;
             }
         }
     }
-}
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    font-size: 1.6rem;
+    .calc {
+        display: flex;
+        font-weight: 600;
 
-    font-weight: 700;
-
-    .total {
-        color: var(--red-color);
+        align-items: center;
+        width: 12%;
+        justify-content: center;
     }
 }
 
@@ -163,7 +217,7 @@
             transition: color 0.3s;
 
             &:hover {
-                color: var(--red-color);
+                color: var(--orange-color);
                 transition: color 0.3s;
             }
         }
@@ -181,7 +235,7 @@
             right: 0;
             font-weight: 700;
             font-size: 2.4rem;
-            color: var(--red-color);
+            color: var(--orange-color);
         }
     }
 }

@@ -5,6 +5,7 @@ import videos from '~/assets/videos';
 import ReactPlayer from 'react-player/youtube';
 import sportImages from '~/assets/images/categories/sport';
 import Button from '~/components/Button';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -12,8 +13,9 @@ function Collections() {
     return (
         <div className={cx('collections')}>
             <div className={cx('container', 'row')}>
-                <div className={cx('video')}>
+                <div className={cx('banner')}>
                     {/* <ReactPlayer url={videos.HomeCategory} width="100%" height="100%" volume="0" /> */}
+                    <img src={images.sale} />
                 </div>
                 <div className={cx('product-demo')}>
                     <img src={sportImages[0].url} alt="thoi-trang-the-thao" />
@@ -22,7 +24,9 @@ function Collections() {
                         <h3 className={cx('title')}>thời trang thể thao</h3>
                         <p className={cx('action')}>
                             <div className={cx('button')}>
-                                <Button primary>Xem Ngay</Button>
+                                <Button primary to="/collection/thoi-trang-the-thao">
+                                    Xem Ngay
+                                </Button>
                             </div>
                         </p>
                     </div>
@@ -33,9 +37,10 @@ function Collections() {
                         <p></p>
                         <h3 className={cx('title')}>phụ kiện thể thao</h3>
                         <p className={cx('action')}>
-                            {/* <button className={cx('button', 'primary-button')}>Xem ngay</button> */}
                             <div className={cx('button')}>
-                                <Button primary>Xem Ngay</Button>
+                                <Button primary to="/collection/phu-kien-the-thao">
+                                    Xem Ngay
+                                </Button>
                             </div>
                         </p>
                     </div>

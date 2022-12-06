@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 }
 
 .container {
@@ -18,7 +18,7 @@
 
     .link {
         &:hover {
-            color: var(--red-color);
+            color: var(--orange-color);
         }
     }
 }

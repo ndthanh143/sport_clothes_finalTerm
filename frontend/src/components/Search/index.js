@@ -73,7 +73,7 @@ function Search() {
                                             {searchResult.length > 4 ? (
                                                 <Link
                                                     className={cx('more')}
-                                                    to="/collection"
+                                                    to={`/search/${searchValue}`}
                                                     onClick={() => {
                                                         setSearchValue('');
                                                         handleHideResult();
@@ -104,9 +104,9 @@ function Search() {
                     </Tippy>
                 </div>
 
-                <button className={cx('search-btn')}>
+                <div className={cx('search-icon')}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </button>
+                </div>
             </form>
         </div>
     );

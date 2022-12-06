@@ -1,8 +1,5 @@
-const express = require('express');
 const app = require('./app');
 const connectDatabase = require('./config/database');
-const path = require('path');
-
 const dotenv = require('dotenv');
 
 
@@ -20,14 +17,6 @@ dotenv.config({ path: 'backend/config/config.env' });
 
 // Connecting to database
 connectDatabase();
-
-// if (process.env.NODE_ENV == 'PRODUCTION') {
-    
-//     app.get('*', (req, res) => {
-//         app.use(express.static(path.join(__dirname, '../frontend/build')));
-//         res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
-//     });
-// }
 
 const server = app.listen(process.env.PORT, () => {
     console.log(`Server start on Port: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`);

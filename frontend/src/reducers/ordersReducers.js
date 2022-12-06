@@ -11,7 +11,15 @@ import {
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
+    UPDATE_ORDER_REQUEST,
+    UPDATE_ORDER_SUCCESS,
+    UPDATE_ORDER_FAIL,
+    DELETE_ORDER_REQUEST,
+    DELETE_ORDER_SUCCESS,
+    DELETE_ORDER_FAIL,
+    DELETE_ORDER_RESET,
     CLEAR_ERRORS,
+    UPDATE_ORDER_RESET,
 } from '~/constants/orderConstants';
 
 export const ordersReducer = (state = { orders: [] }, action) => {
@@ -129,6 +137,78 @@ export const orderDetailsReducer = (state = { order: {} }, action) => {
                 ...state,
                 error: null,
             };
+        default:
+            return state;
+    }
+};
+
+export const updateOrderReducer = (state = { order: {} }, action) => {
+    switch (action.type) {
+        case UPDATE_ORDER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            };
+        case UPDATE_ORDER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                isUpdated: action.payload,
+                order: action.payload.order,
+            };
+        case UPDATE_ORDER_FAIL:
+            return {
+                ...state,
+                loading: false,
+                isUpdated: action.payload,
+            };
+        case UPDATE_ORDER_RESET:
+            return {
+                ...state,
+                isUpdated: false,
+            };
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null,
+            };
+
+        default:
+            return state;
+    }
+};
+
+export const deleteOrderReducer = (state = {}, action) => {
+    switch (action.type) {
+        case DELETE_ORDER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            };
+        case DELETE_ORDER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                isDeleted: action.payload,
+            };
+        case DELETE_ORDER_FAIL:
+            return {
+                ...state,
+                loading: false,
+                isDeleted: false,
+            };
+
+        case DELETE_ORDER_RESET:
+            return {
+                ...state,
+                isDeleted: false,
+            };
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null,
+            };
+
         default:
             return state;
     }

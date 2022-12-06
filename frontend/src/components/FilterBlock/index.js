@@ -1,10 +1,13 @@
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import ColorSelection from '../ColorSelection';
 import styles from './FilterBlock.module.scss';
 
 const cx = classNames.bind(styles);
-function FilterBlock({ ListColor, title, ListCheckBox }) {
+function FilterBlock({ ListColor, title, ListCheckBox, checked, onChange }) {
+    const [checkBox, setCheckBox] = useState(checked);
+
     return (
         <div className={cx('filter-block-wrap', 'col-4')}>
             <div className={cx('filter-block')}>
@@ -20,7 +23,7 @@ function FilterBlock({ ListColor, title, ListCheckBox }) {
                             {ListColor.map((item, index) => {
                                 return (
                                     <li key={index}>
-                                        <ColorSelection color={item} />
+                                        <ColorSelection color={item} onChange={onChange} />
                                     </li>
                                 );
                             })}
@@ -28,8 +31,15 @@ function FilterBlock({ ListColor, title, ListCheckBox }) {
                     ) : (
                         <ul className={cx('checkbox-list')}>
                             {ListCheckBox.map((item, index) => (
-                                <li key={index}>
-                                    <input type="checkbox" />
+                                <li
+                                    key={index}
+                                    className={cx('option')}
+                                    onClick={() => {
+                                        setCheckBox(index);
+                                        onChange(index);
+                                    }}
+                                >
+                                    <input type="checkbox" checked={checkBox === index} />
                                     <label>{item}</label>
                                 </li>
                             ))}

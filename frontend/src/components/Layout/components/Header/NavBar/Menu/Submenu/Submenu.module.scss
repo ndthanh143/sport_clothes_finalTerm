@@ -1,7 +1,7 @@
 .submenu {
 }
 .sub-item {
-    padding: 9px 18px;
+    // padding: 9px 18px;
     .icon {
         position: absolute;
         font-size: 1rem;
@@ -16,6 +16,10 @@
         right: 10px;
         transition: all 0.15s ease-in-out;
     }
+
+    &:hover .item-link {
+        color: var(--orange-color);
+    }
 }
 .sub-item + .sub-item {
     border-top: 1px solid #efefef;
@@ -24,7 +28,8 @@
     font-size: 1.5rem;
     color: #000;
     opacity: 0.85;
-    margin: 9px 0;
+    display: block;
+    padding: 9px 18px;
 }
 .level-2 {
     position: absolute;

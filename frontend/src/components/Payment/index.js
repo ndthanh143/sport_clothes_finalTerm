@@ -13,7 +13,7 @@ function Payment() {
     const [directPayment, setDirectPayment] = useState(false);
     const dispatch = useDispatch();
 
-    const { cartItems, shippingInfo } = useSelector((state) => state.cart);
+    const { notation, cartItems, shippingInfo } = useSelector((state) => state.cart);
     const { user } = useSelector((state) => state.auth);
 
     const handleSubmit = () => {
@@ -30,7 +30,7 @@ function Payment() {
         }
         const orderItems = cartItems;
 
-        dispatch(newOrder(shippingInfo, user, orderItems, paymentInfo));
+        dispatch(newOrder(shippingInfo, user, orderItems, paymentInfo, notation));
     };
 
     const handleChoosePayment = (type) => {
