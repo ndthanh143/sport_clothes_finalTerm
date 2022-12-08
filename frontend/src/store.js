@@ -9,6 +9,7 @@ import {
     deleteProductReducer,
     newProductReducer,
     updateProductReducer,
+    adminProductsReducer,
 } from './reducers/productReducers';
 import { authReducer, deleteUserReducer, updateUserReducer, userDetailReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
@@ -28,6 +29,7 @@ import {
     newMessageReducer,
     updateMessageReducer,
 } from './reducers/messageReducers';
+import { provincesReducer } from './reducers/provinceReducers';
 
 const reducers = combineReducers({
     // authentication
@@ -39,6 +41,7 @@ const reducers = combineReducers({
     deleteProduct: deleteProductReducer,
     newProduct: newProductReducer,
     updateProduct: updateProductReducer,
+    adminProducts: adminProductsReducer,
     // user
     updateUser: updateUserReducer,
     deleteUser: deleteUserReducer,
@@ -60,6 +63,8 @@ const reducers = combineReducers({
     messageDetails: messageDetailsReducer,
     updateMessage: updateMessageReducer,
     deleteMessage: deleteMessageReducer,
+    // provinces
+    provinces: provincesReducer,
 });
 
 let initialState = {

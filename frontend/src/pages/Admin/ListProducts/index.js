@@ -47,7 +47,7 @@ function ListProducts() {
     } else {
         return (
             <div className={cx('container')}>
-                <h1 className={cx('heading')}>All Products</h1>
+                <h1 className={cx('heading')}>Danh sách sản phẩm</h1>
 
                 <div className={cx('table')}>
                     <div className={cx('field-bar')}>

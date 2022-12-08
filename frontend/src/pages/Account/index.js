@@ -18,7 +18,7 @@ function Account(props) {
     const dispatch = useDispatch();
     const { isAuthenticated, error, loading, user } = useSelector((state) => state.auth);
 
-    if (!loading && !isAuthenticated) {
+    if (loading === false && !isAuthenticated) {
         navigate('/login');
     }
 
@@ -47,9 +47,7 @@ function Account(props) {
         dispatch(logout());
         window.location.reload();
     };
-    if (loading) {
-        return <Loader />;
-    } else {
+    if (loading === false) {
         return (
             <div className={cx('container')}>
                 <div className={cx('heading')}>
@@ -76,6 +74,8 @@ function Account(props) {
                 </div>
             </div>
         );
+    } else {
+        return <Loader />;
     }
 }
 

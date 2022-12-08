@@ -47,7 +47,7 @@ function ListUsers() {
     } else {
         return (
             <div className={cx('container')}>
-                <h1 className={cx('heading')}>All Users</h1>
+                <h1 className={cx('heading')}>Danh sách tài khoản người dùng</h1>
 
                 <div className={cx('table')}>
                     <div className={cx('field-bar')}>

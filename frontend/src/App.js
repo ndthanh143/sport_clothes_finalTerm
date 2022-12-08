@@ -7,23 +7,24 @@ import { useEffect } from 'react';
 import store from './store';
 import { loadUser } from './actions/userActions';
 import Loader from './components/Loader';
-import { getAllProducts } from './actions/productActions';
+import { getAdminProducts, getAllProducts } from './actions/productActions';
 import { removeItemFromCart } from './actions/cartActions';
 import Login from './components/Login';
 
 function App() {
     const { loading, isAuthenticated, user } = useSelector((state) => state.auth);
     const { cartItems } = useSelector((state) => state.cart);
-    const { products } = useSelector((state) => state.products);
+    const { products: adminProducts, loading: prodLoading } = useSelector((state) => state.adminProducts);
 
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadUser());
-        dispatch(getAllProducts());
+        dispatch(getAdminProducts());
     }, []);
-    if (products.length > 0) {
+
+    if (prodLoading === false) {
         cartItems.map((item) => {
-            let temp = products.find((product) => item.product === product._id);
+            let temp = adminProducts.find((product) => item.product === product._id);
             if (!temp) {
                 dispatch(removeItemFromCart(item));
             }

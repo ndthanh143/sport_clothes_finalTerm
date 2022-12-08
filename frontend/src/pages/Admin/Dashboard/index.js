@@ -11,9 +11,9 @@ import Loader from '~/components/Loader';
 const cx = classNames.bind(styles);
 
 function Dashboard() {
-    const { products, loading: ldProd } = useSelector((state) => state.products);
-    const { users, loading: ldUser } = useSelector((state) => state.auth);
-    const { orders, totalAmount, ldOrder } = useSelector((state) => state.orders);
+    const { products: adminProducts, loading: ldProd } = useSelector((state) => state.adminProducts);
+    const { users, loading: ldUser, user } = useSelector((state) => state.auth);
+    const { orders, totalAmount, loading: ldOrder } = useSelector((state) => state.orders);
 
     const dispatch = useDispatch();
 
@@ -22,34 +22,35 @@ function Dashboard() {
         dispatch(getAllUsers());
         dispatch(getAllOrders());
     }, []);
-    if (ldProd || ldUser || ldOrder) {
-        return <Loader />;
-    } else {
+    console.log(ldProd, ldUser, ldOrder);
+    if (ldProd === false && ldUser === false && ldOrder === false) {
         return (
             <div className={cx('container')}>
-                <h1 className={cx('heading')}>DASHBOARD</h1>
+                <h1 className={cx('heading')}>Xin chào {user.name} !!!</h1>
                 <div className={cx('fields')}>
                     <div className={cx('total')}>
-                        <h3 className={cx('title')}>Total Amount</h3>
-                        <div className={cx('number')}>{totalAmount}đ</div>
+                        <h3 className={cx('title')}>Số lượng lúa thu được</h3>
+                        <div className={cx('number')}>{totalAmount.toLocaleString({ miniumFractionDigits: 3 })} ký</div>
                     </div>
                     <div className={cx('management')}>
                         <div className={cx('type', 'product')}>
-                            <h3 className={cx('title')}>Products</h3>
-                            <div className={cx('number')}>{products.length}</div>
+                            <h3 className={cx('title')}>Số lượng đồ chơi</h3>
+                            <div className={cx('number')}>{adminProducts.length} cái</div>
                         </div>
                         <div className={cx('type', 'order')}>
-                            <h3 className={cx('title')}>Orders</h3>
-                            <div className={cx('number')}>{orders.length}</div>
+                            <h3 className={cx('title')}>Số lượng đơn hàng</h3>
+                            <div className={cx('number')}>{orders.length} đơn</div>
                         </div>
                         <div className={cx('type', 'user')}>
-                            <h3 className={cx('title')}>Users</h3>
-                            <div className={cx('number')}>{users.length} </div>
+                            <h3 className={cx('title')}>Dân số</h3>
+                            <div className={cx('number')}>{users.length} người</div>
                         </div>
                     </div>
                 </div>
             </div>
         );
+    } else {
+        return <Loader />;
     }
 }
 

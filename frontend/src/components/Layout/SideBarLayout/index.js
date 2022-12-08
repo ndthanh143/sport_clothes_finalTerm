@@ -2,14 +2,18 @@ import { useState } from 'react';
 import { FaBook, FaChevronDown, FaProductHunt } from 'react-icons/fa';
 import { AiFillDashboard, AiFillMessage } from 'react-icons/ai';
 import { BsFillHandbagFill, BsFillPeopleFill } from 'react-icons/bs';
+import { FiLogOut } from 'react-icons/fi';
 import { GrFormAdd } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './SideBarLayout.module.scss';
+import { useDispatch } from 'react-redux';
+import { logout } from '~/actions/userActions';
 const cx = classNames.bind(styles);
 
 function SideBarLayout({ children }) {
     const [openSubnav, setOpenSubnav] = useState(false);
+    const dispatch = useDispatch();
 
     const handleOpenSubnav = () => {
         if (openSubnav) {
@@ -19,6 +23,10 @@ function SideBarLayout({ children }) {
             setOpenSubnav(!openSubnav);
         }
     };
+    const handleLogout = () => {
+        dispatch(logout());
+    };
+
     return (
         <>
             <div className={cx('container')}>
@@ -41,7 +49,7 @@ function SideBarLayout({ children }) {
                                     <span className={cx('icon-nav')}>
                                         <FaProductHunt />
                                     </span>
-                                    Products
+                                    Sản phẩm
                                 </p>{' '}
                                 <span className={cx('icon')}>
                                     <FaChevronDown />
@@ -58,7 +66,7 @@ function SideBarLayout({ children }) {
                                         <span className={cx('icon-nav')}>
                                             <FaBook />
                                         </span>
-                                        All
+                                        Tất cả sản phẩm
                                     </Link>
                                 </li>
                                 <li className={cx('item')}>
@@ -66,7 +74,7 @@ function SideBarLayout({ children }) {
                                         <span className={cx('icon-nav')}>
                                             <GrFormAdd />
                                         </span>
-                                        Create
+                                        Thêm
                                     </Link>
                                 </li>
                             </ul>
@@ -76,7 +84,7 @@ function SideBarLayout({ children }) {
                                 <span className={cx('icon-nav')}>
                                     <BsFillHandbagFill />
                                 </span>
-                                Orders
+                                Đơn hàng
                             </Link>
                         </li>
                         <li className={cx('sidebar-item', 'user')}>
@@ -92,8 +100,16 @@ function SideBarLayout({ children }) {
                                 <span className={cx('icon-nav')}>
                                     <AiFillMessage />
                                 </span>
-                                Messages
+                                Phản hồi
                             </Link>
+                        </li>
+                        <li className={cx('sidebar-item')} onClick={handleLogout}>
+                            <a href="/login">
+                                <span className={cx('icon-nav')}>
+                                    <FiLogOut />
+                                </span>
+                                Đăng xuất
+                            </a>
                         </li>
                     </ul>
                 </div>

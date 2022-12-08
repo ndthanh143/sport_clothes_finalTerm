@@ -23,7 +23,6 @@ function Contact() {
 
     const handleSubmit = () => {
         const senderInfo = { name, email, phoneNo };
-        console.log(senderInfo, title, content);
         try {
             dispatch(newMessage(senderInfo, title, content));
             clearForm();
@@ -104,7 +103,7 @@ function Contact() {
                                     </p>
                                 </div>
                             ) : null}
-                            <form className={cx('form-input')}>
+                            <form action="#" className={cx('form-input')}>
                                 <input
                                     type="text"
                                     placeholder="Tên của bạn"
@@ -144,7 +143,7 @@ function Contact() {
                                     <a href="https://policies.google.com/privacy">&nbsp;Privacy Policy&nbsp;</a> and{' '}
                                     <a href="https://policies.google.com/terms">&nbsp;Terms of Service&nbsp;</a> apply.
                                 </p>
-                                <div className={cx('submit-btn')}>
+                                <div className={cx('submit-btn')} onClick={handleSubmit}>
                                     <input type="submit" value="GỬI CHO CHÚNG TÔI" />
                                 </div>
                             </form>

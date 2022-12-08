@@ -39,7 +39,7 @@ function ListOrders() {
     if (!loading && !deleteLoading) {
         return (
             <div className={cx('container')}>
-                <h1 className={cx('heading')}>All Orders</h1>
+                <h1 className={cx('heading')}>Danh sách đơn hàng</h1>
 
                 <div className={cx('table')}>
                     <div className={cx('field-bar')}>

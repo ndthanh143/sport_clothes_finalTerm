@@ -32,26 +32,28 @@ function Home() {
     useEffect(() => {
         dispatch(getAllProducts(currentPage));
     }, [dispatch]);
-    console.log(products);
-    products.map((item) => {
-        switch (item.category) {
-            case 'Quan ao bong da':
-                footballProducts.push(item);
-                break;
-            case 'Quan ao the thao':
-                sportProducts.push(item);
-                break;
-            case 'Quan ao bong chuyen':
-                volleyballProducts.push(item);
-                break;
-            case 'Phu kien the thao':
-                accessory.push(item);
-                break;
 
-            default:
-                break;
-        }
-    });
+    if (loading === false) {
+        products.map((item) => {
+            switch (item.category) {
+                case 'Quan ao bong da':
+                    footballProducts.push(item);
+                    break;
+                case 'Quan ao the thao':
+                    sportProducts.push(item);
+                    break;
+                case 'Quan ao bong chuyen':
+                    volleyballProducts.push(item);
+                    break;
+                case 'Phu kien the thao':
+                    accessory.push(item);
+                    break;
+
+                default:
+                    break;
+            }
+        });
+    }
 
     if (!loading && products) {
         return (

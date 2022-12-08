@@ -30,7 +30,6 @@ export const productsReducer = (state = { products: [] }, action) => {
     switch (action.type) {
         // request
         case ALL_PRODUCTS_REQUEST:
-        case ADMIN_PRODUCTS_REQUEST:
             return {
                 loading: true,
                 products: [],
@@ -44,6 +43,33 @@ export const productsReducer = (state = { products: [] }, action) => {
                 productsCount: action.payload.productsCount,
                 resPerPage: action.payload.resPerPage,
             };
+        // Fail
+        case ALL_PRODUCTS_FAIL:
+            return {
+                loading: false,
+                error: action.payload,
+            };
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null,
+            };
+
+        default:
+            return state;
+    }
+};
+export const adminProductsReducer = (state = { products: [] }, action) => {
+    switch (action.type) {
+        // request
+        case ADMIN_PRODUCTS_REQUEST:
+            return {
+                loading: true,
+                products: [],
+            };
+
+        //Success
         case ADMIN_PRODUCTS_SUCCESS:
             return {
                 loading: false,
@@ -51,7 +77,6 @@ export const productsReducer = (state = { products: [] }, action) => {
             };
 
         // Fail
-        case ALL_PRODUCTS_FAIL:
         case ADMIN_PRODUCTS_FAIL:
             return {
                 loading: false,
