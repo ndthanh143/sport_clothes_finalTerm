@@ -7,7 +7,7 @@ const sendToken = require("../utils/jwtToken");
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
 
-  const user = User.findOne({ email });
+  const user = await User.findOne({ email });
   if (user) {
     return next(new ErrorHandler("Email has already exist", 400));
   }

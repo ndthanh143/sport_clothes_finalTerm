@@ -47,8 +47,8 @@ function OrderDetails() {
                                     <img src={images.momo_icon} className={cx('icon')} />
                                 </h3>
                                 <div className={cx('info')}>
-                                    <p>Người nhận: Nguyễn Duy Thanh</p>
-                                    <p>Số điện thoại: 0354560042</p>
+                                    <p>Người nhận: Shop Bóng Đá</p>
+                                    <p>Số điện thoại: 0342423345</p>
                                     <p>Số tiền: {totalPrice.toLocaleString({ miniumFractionDigits: 3 })}đ</p>
                                     <p>Ghi chú chuyển tiền bạn ghi mã đơn hàng: {id}</p>
                                 </div>

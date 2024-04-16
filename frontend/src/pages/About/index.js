@@ -7,105 +7,61 @@ import SideBox from '~/components/SideBox';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
+
 function About() {
     return (
         <>
-            <Breadcrumb cases={{ title: 'Shop Thời Trang Thể Thao' }} />
+            <Breadcrumb cases={{ title: 'Giới thiệu' }} />
             <div className={cx('container')}>
                 <div className={cx('wrap-content')}>
                     <div className={cx('header')}>
-                        <h1>Giới Thiệu Shop Thời Trang Thể Thao</h1>
+                        <h1>Chào Mừng Đến Với cửa hàng quần áo bóng đá</h1>
                     </div>
                     <div className={cx('content')}>
-                        <h4 className={cx('title')}> Giới Thiệu Shop Thời Trang Thể Thao</h4>
+                        <h4 className={cx('title')}>Về Chúng Tôi</h4>
                         <p>
-                            &emsp; Đây là sản phẩm đồ án CNTT của Sinh Viên năm 3 trường Đại học Sư Phạm kỹ thuật Thành
-                            Phố Hồ Chí Minh
+                            &emsp; Cửa hàng chúng tôi chuyên cung cấp các mặt hàng thể thao, đặc biệt là đồ dùng, quần áo và phụ kiện bóng đá. Tất cả sản phẩm của chúng tôi đều được nhập khẩu chính hãng, đảm bảo chất lượng cao và giá cả phải chăng.
                         </p>
                         <div className={cx('image')}>
-                            <img src={aboutPageImages[0]} alt="img" />
+                            <img src={aboutPageImages[0]} alt="Football Jerseys" />
                             <br />
-                            <span>Hình ảnh thanh niên đang vui vẻ chụp hình trước miếng bò beefstake</span>
+                            <span>Kho áo đấu bóng đá chính hãng từ các câu lạc bộ lớn</span>
                         </div>
                         <p>
-                            &emsp; Sau đây là những hình ảnh xàm xí một chút về một trong những chiến dịch đáng nhớ
-                            trong đời tôi, MÙA HÈ XANH Đak Nông 2022 !!!. Nếu bạn rảnh có thể xem, còn không thì cứ vui
-                            vẻ lướt qua nhé
+                            &emsp; Với kinh nghiệm nhiều năm trong lĩnh vực thể thao, chúng tôi tự hào là địa chỉ đáng tin cậy cho những ai đam mê bóng đá.
                         </p>
                         <div className={cx('image')}>
-                            <img src={aboutPageImages[1]} alt="img" />
+                            <img src={aboutPageImages[1]} alt="Football Shoes" />
                             <br />
-                            <span>Đây là lúc thể hiện ngầu lòi chơi đàn với mấy đứa nhỏ nè.</span>
+                            <span>Giày đá bóng các loại, phù hợp mọi lứa tuổi</span>
                         </div>
                         <p>
-                            &emsp; Ở trên đó 21 ngày, là một quãng thời gian vô cùng tuyệt vời. Gần như tất cả chúng tôi
-                            đã bỏ hết mọi ưu phiền lo âu để đắm chìm trong những không khí trong lành, những ngày tháng
-                            ăn nằm dầm dề với nhau mà không khi nào nhạt phai
+                            &emsp; Không chỉ bán hàng, chúng tôi còn là nơi chia sẻ niềm đam mê bóng đá, kết nối cộng đồng người hâm mộ tại Việt Nam.
                         </p>
                         <div className={cx('image')}>
-                            <img src={aboutPageImages[2]} alt="img" />
+                            <img src={aboutPageImages[2]} alt="Football Accessories" />
                             <br />
-                            <img src={aboutPageImages[3]} alt="img" />
+                            <img src={aboutPageImages[3]} alt="More Football Gear" />
                             <br />
-                            <span>
-                                Đi ngang đường tự nhiên gặp chú gì vừa đi làm về mang chùm bơ ra cho mà không dám nhận
-                                tại chỉ huy trưởng nó đang nhìn :V.
-                            </span>
+                            <span>Thiết bị phụ kiện bổ trợ: Bóng, găng tay thủ môn, băng đội trưởng...</span>
                         </div>
                         <p>
-                            &emsp; Hình ảnh đồng quê này yên bình thực sự đấy. Cái lạnh của vùng núi, sự mộc mạc của con
-                            người
+                            &emsp; Hãy đến với Shop Đồ Bóng Đá để cảm nhận sự khác biệt và tận hưởng trải nghiệm mua sắm tuyệt vời!
                         </p>
-                        <div className={cx('image')}>
-                            <img src={aboutPageImages[4]} alt="img" />
-                            <br />
-                            <span>Những hoạt động thường ngày.</span>
-                            <div className={cx('image')}>
-                                <img src={aboutPageImages[5]} alt="img" />
-                                <br />
-                                <img src={aboutPageImages[6]} alt="img" />
-                                <br />
-                                <img src={aboutPageImages[7]} alt="img" />
-                                <br />
-                                <img src={aboutPageImages[8]} alt="img" />
-                                <br />
-                                <img src={aboutPageImages[9]} alt="img" />
-                                <br />
-                            </div>
-
-                            <span>
-                                Lưu từng này thôi, viết cái báo cáo đã sắp hết deadline rồi, mai mốt rảnh up tiếp :Vv
-                            </span>
-                        </div>
                     </div>
                 </div>
                 <SideBar>
-                    <SideBox title="Danh Mục page" collapsible>
+                    <SideBox title="Thông Tin Liên Hệ" collapsible>
                         <div className={cx('sidebar-list')}>
                             <ul className={cx('menu-list')}>
                                 <li className={cx('item')}>
-                                    <Link to="/">Thông tin tuyển dụng</Link>
+                                    <Link to="/contact">Liên Hệ</Link>
                                 </li>
                                 <li className={cx('item')}>
-                                    <Link to="/">Tìm kiếm</Link>
+                                    <Link to="/collection">Danh sách sản phẩm</Link>
                                 </li>
                                 <li className={cx('item')}>
-                                    <Link to="/">Giới thiệu</Link>
-                                </li>
-                                <li className={cx('item')}>
-                                    <Link to="/">Chính sách đổi trả</Link>
-                                </li>
-                                <li className={cx('item')}>
-                                    <Link to="/">Chính sách cộng tác viên & Đại lý</Link>
-                                </li>
-                                <li className={cx('item')}>
-                                    <Link to="/">Hướng dẫn mua hàng</Link>
-                                </li>
-                                <li className={cx('item')}>
-                                    <Link to="/">Chính sách bảo mật</Link>
-                                </li>
-                                <li className={cx('item')}>
-                                    <Link to="/">Hướng dẫn cách thanh toán và áp dụng Voucher trên REEPAY</Link>
+                                    <Link to="/about">Giới Thiệu</Link>
                                 </li>
                             </ul>
                         </div>

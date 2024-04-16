@@ -8,7 +8,6 @@ import styles from './Cart.module.scss';
 import Breadcrumb from '~/components/Breadcrumb';
 import SideBar from '~/components/Layout/components/SideBar';
 import { removeItemFromCart, saveNotation, updateItemCart } from '~/actions/cartActions';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { BsTrash } from 'react-icons/bs';
 const cx = classNames.bind(styles);
 

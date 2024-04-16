@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 function OrderSuccess() {
     useEffect(() => {
-        localStorage.setItem('cartItems', []);
+        localStorage.setItem('cart-items', []);
     }, []);
 
     return (

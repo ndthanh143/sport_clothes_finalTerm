@@ -25,7 +25,9 @@ export const addItemToCart = (id, quantity, size, color) => async (dispatch, get
             },
         });
 
-        localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+        const saveData = JSON.stringify(getState().cart.cartItems)
+
+        localStorage.setItem('cart-items', saveData);
     } catch (error) {
         alert(error);
     }
@@ -48,7 +50,7 @@ export const removeItemFromCart = (item) => async (dispatch, getState) => {
             payload: item,
         });
 
-        localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+        localStorage.setItem('cart-items', JSON.stringify(getState().cart.cartItems));
     } catch (error) {
         alert(error);
     }
@@ -60,7 +62,7 @@ export const updateItemCart = (item) => async (dispatch, getState) => {
             payload: item,
         });
 
-        localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+        localStorage.setItem('cart-items', JSON.stringify(getState().cart.cartItems));
     } catch (error) {
         alert(error);
     }

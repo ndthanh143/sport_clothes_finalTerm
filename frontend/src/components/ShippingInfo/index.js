@@ -9,13 +9,14 @@ import { getAllProvinces } from '~/actions/provinceActions';
 import Button from '../Button';
 import CheckoutStep from '../CheckoutStep';
 import styles from './ShippingInfo.module.scss';
+import { provinces } from '~/constants/provinceConstants';
 
 const cx = classNames.bind(styles);
 
 function ShippingInfo() {
     const { loading, isAuthenticated } = useSelector((state) => state.auth);
     const { shippingInfo } = useSelector((state) => state.cart);
-    const { provinces } = useSelector((state) => state.provinces);
+    
 
     const [name, setName] = useState(shippingInfo.name);
     const [address, setAddress] = useState(shippingInfo.address);
@@ -29,11 +30,9 @@ function ShippingInfo() {
         dispatch(getAllProvinces());
     }, []);
     let provinceData = [];
-    if (provinces.length > 0) {
-        provinces.map((item) => {
-            provinceData.push({ value: item.name, label: item.name });
-        });
-    }
+    provinces.map((item) => {
+        provinceData.push({ value: item.name, label: item.name });
+    });
 
     const submitHandler = (e) => {
         e.preventDefault();

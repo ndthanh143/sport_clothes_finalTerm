@@ -1,7 +1,7 @@
 const aboutPageImages = [
     require('~/assets/images/aboutPageImages/img1.jpg'),
     require('~/assets/images/aboutPageImages/img2.jpg'),
-    require('~/assets/images/aboutPageImages/img3.jpg'),
+    require('~/assets/images/aboutPageImages/img3.webp'),
     require('~/assets/images/aboutPageImages/img4.jpg'),
     require('~/assets/images/aboutPageImages/img5.jpg'),
     require('~/assets/images/aboutPageImages/img6.jpg'),

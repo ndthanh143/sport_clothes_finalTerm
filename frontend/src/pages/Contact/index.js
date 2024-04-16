@@ -57,7 +57,7 @@ function Contact() {
                                     </span>
                                     <span className={cx('description')}>
                                         <p className={cx('title')}>Địa chỉ</p>
-                                        <p>KTX Khu B, phường Đông Hòa, Dĩ An, Bình Dương</p>
+                                        <p>Số 2, đường 17, phường Linh Trung, Quận Thủ Đức, TP.HCM</p>
                                     </span>
                                 </li>
                                 <li>
@@ -66,7 +66,7 @@ function Contact() {
                                     </span>
                                     <span className={cx('description')}>
                                         <p className={cx('title')}>Email</p>
-                                        <p>thanhnd143@gmail.com</p>
+                                        <p>footbalshop123@gmail.com</p>
                                     </span>
                                 </li>
                                 <li>
@@ -75,7 +75,7 @@ function Contact() {
                                     </span>
                                     <span className={cx('description')}>
                                         <p className={cx('title')}>Điện thoại</p>
-                                        <p>0354.560.042</p>
+                                        <p>0342.560.042</p>
                                     </span>
                                 </li>
                                 <li>

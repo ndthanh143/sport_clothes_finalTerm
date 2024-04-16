@@ -3,33 +3,10 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import { privateRoutes, publicRoutes } from './routes';
 import { DefaultLayout } from './components/Layout';
 import ScrollToTop from './ScrollToTop';
-import { useEffect } from 'react';
-import store from './store';
-import { loadUser } from './actions/userActions';
-import Loader from './components/Loader';
-import { getAdminProducts, getAllProducts } from './actions/productActions';
-import { removeItemFromCart } from './actions/cartActions';
-import Login from './components/Login';
 
 function App() {
-    const { loading, isAuthenticated, user } = useSelector((state) => state.auth);
-    const { cartItems } = useSelector((state) => state.cart);
-    const { products: adminProducts, loading: prodLoading } = useSelector((state) => state.adminProducts);
-
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadUser());
-        dispatch(getAdminProducts());
-    }, []);
-
-    if (prodLoading === false) {
-        cartItems.map((item) => {
-            let temp = adminProducts.find((product) => item.product === product._id);
-            if (!temp) {
-                dispatch(removeItemFromCart(item));
-            }
-        });
-    }
+    const { isAuthenticated, user } = useSelector((state) => state.auth);
+   
 
     return (
         <Router>
